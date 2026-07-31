@@ -1,0 +1,126 @@
+---
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta
+      name="description"
+      content="The requested page could not be found on AiLawyer.world."
+    />
+
+    <meta name="robots" content="noindex" />
+
+    <title>404 — Page Not Found | AiLawyer.world</title>
+
+    <style>
+      :global(*) {
+        box-sizing: border-box;
+      }
+
+      :global(html) {
+        background: #07111f;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at top right, #102e46 0, transparent 35%),
+          #07111f;
+        color: #f3f7fb;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      main {
+        width: min(760px, 90%);
+        padding: 4rem 0;
+      }
+
+      .status {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        padding: 0.45rem 0.75rem;
+        border: 1px solid #e49a3a;
+        border-radius: 999px;
+        color: #e49a3a;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+      }
+
+      .code {
+        margin: 0;
+        color: #47d7ff;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: clamp(5rem, 18vw, 10rem);
+        font-weight: 700;
+        line-height: 0.9;
+      }
+
+      h1 {
+        margin: 1.5rem 0 1rem;
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        line-height: 1.1;
+      }
+
+      p {
+        max-width: 620px;
+        margin: 0;
+        color: #b8c5d4;
+        font-size: 1.15rem;
+        line-height: 1.7;
+      }
+
+      a {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 0.85rem 1.2rem;
+        border: 1px solid #47d7ff;
+        border-radius: 0.5rem;
+        color: #f3f7fb;
+        text-decoration: none;
+        font-weight: 700;
+        transition:
+          background 160ms ease,
+          color 160ms ease,
+          transform 160ms ease;
+      }
+
+      a:hover,
+      a:focus-visible {
+        background: #47d7ff;
+        color: #07111f;
+        transform: translateY(-2px);
+      }
+
+      a:focus-visible {
+        outline: 2px solid #f3f7fb;
+        outline-offset: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="status">STATUS: PAGE_NOT_FOUND</div>
+
+      <p class="code">404</p>
+
+      <h1>This page could not be verified.</h1>
+
+      <p>
+        The address may be incorrect, the page may have moved, or the requested
+        material may not yet exist.
+      </p>
+
+      <a href="/">Return to AiLawyer.world</a>
+    </main>
+  </body>
+</html>
