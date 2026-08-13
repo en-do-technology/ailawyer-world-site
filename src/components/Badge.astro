@@ -1,0 +1,44 @@
+---
+interface Props {
+  tone?: 'default' | 'secondary' | 'verified' | 'critical' | 'neutral';
+}
+
+const { tone = 'default' } = Astro.props;
+---
+
+<span class="badge" data-tone={tone}>
+  <slot />
+</span>
+
+<style>
+  .badge {
+    display: inline-block;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid var(--badge-border);
+    border-radius: 999px;
+    color: var(--badge-text);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.07em;
+  }
+
+  .badge[data-tone="secondary"] {
+    border-color: var(--accent-secondary);
+    color: var(--accent-secondary);
+  }
+
+  .badge[data-tone="verified"] {
+    border-color: var(--status-verified);
+    color: var(--status-verified);
+  }
+
+  .badge[data-tone="critical"] {
+    border-color: var(--status-critical);
+    color: var(--status-critical);
+  }
+
+  .badge[data-tone="neutral"] {
+    border-color: var(--status-neutral);
+    color: var(--status-neutral);
+  }
+</style>

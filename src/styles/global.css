@@ -1,0 +1,232 @@
+:root {
+  /*
+   * AiLawyer Design System v1
+   * -------------------------
+   * Layer 1: raw palette
+   * Layer 2: themes
+   * Layer 3: semantic accents
+   *
+   * Existing compatibility aliases are kept temporarily
+   * so current pages do not change while we migrate them.
+   */
+
+  /* =========================================================
+     RAW PALETTE — PAPER / EDITORIAL
+     Based on the current Impressum design
+     ========================================================= */
+
+  --paper-bg: #f4f1ea;
+  --paper-text: #152235;
+  --paper-muted: #536274;
+  --paper-surface: #ebe7de;
+  --paper-border: #c8c1b4;
+  --paper-link: #176b87;
+
+  --paper-orange: #d17b24;
+  --paper-orange-dark: #a15c1b;
+  --paper-orange-text: #5f4a35;
+  --paper-purple: #6847c7;
+
+  /* =========================================================
+     RAW PALETTE — DARK / EXPERIMENTAL
+     Based on the current Code AVIN design
+     ========================================================= */
+
+  --dark-bg: #090d18;
+  --dark-bg-navy: #07111f;
+
+  --dark-surface: rgba(15, 20, 34, 0.88);
+  --dark-surface-soft: rgba(19, 23, 39, 0.84);
+  --dark-surface-warm: rgba(45, 28, 19, 0.7);
+
+  --dark-border: #2c3144;
+  --dark-border-navy: #203248;
+  --dark-border-warm: #6c4f35;
+
+  --dark-text: #f5f3f8;
+  --dark-text-soft: #f3f7fb;
+  --dark-muted: #c7c2d1;
+  --dark-muted-blue: #b8c5d4;
+  --dark-muted-soft: #aaa5b5;
+  --dark-note: #898493;
+
+  --dark-purple: #c79cff;
+  --dark-orange: #ffad66;
+  --dark-cyan: #47d7ff;
+  --dark-glow-blue: #102e46;
+
+  /* =========================================================
+     STATUS COLORS
+     ========================================================= */
+
+  --status-verified: #2fbf71;
+  --status-critical: #e0565b;
+  --status-neutral: #8493a6;
+
+  /* =========================================================
+     THEME TOKENS
+     Components should use these rather than raw colors.
+     ========================================================= */
+
+  --page-bg: var(--paper-bg);
+  --page-text: var(--paper-text);
+  --page-muted: var(--paper-muted);
+  --page-surface: var(--paper-surface);
+  --page-border: var(--paper-border);
+  --page-link: var(--paper-link);
+
+  /* =========================================================
+     ACCENT TOKENS
+     PageLayout will override these through data-accent.
+     ========================================================= */
+
+  --accent: var(--paper-link);
+  --accent-secondary: var(--paper-orange);
+  --accent-action: var(--paper-link);
+
+  /* =========================================================
+     COMPONENT SEMANTIC TOKENS
+     Components should use these instead of raw palette values.
+     Accent families may override them.
+     ========================================================= */
+
+  --badge-border: var(--accent);
+  --badge-text: var(--accent);
+
+  --notice-border: var(--accent);
+  --notice-text: var(--page-muted);
+
+  --notice-warning-border: var(--accent-secondary);
+  --notice-warning-text: var(--page-muted);
+
+  /* =========================================================
+     TEMPORARY COMPATIBILITY ALIASES
+     Keep current pages visually unchanged during migration.
+     ========================================================= */
+
+  --color-navy-950: #07111f;
+  --color-navy-900: #0d1b2a;
+  --color-navy-800: #152235;
+
+  --color-cyan-500: #47d7ff;
+  --color-cyan-700: #176b87;
+
+  --color-orange-500: #f59e42;
+  --color-orange-700: #b85c16;
+
+  --color-purple-500: #9b7cff;
+  --color-purple-700: #6847c7;
+
+  --color-green-500: #2fbf71;
+  --color-red-500: #e0565b;
+  --color-gray-500: #8493a6;
+
+  --color-paper: #f4f1ea;
+  --color-paper-muted: #ebe7de;
+  --color-border-light: #c8c1b4;
+
+  --color-text-dark: #152235;
+  --color-text-muted-dark: #536274;
+  --color-text-light: #f3f7fb;
+  --color-text-muted-light: #b8c5d4;
+
+  --color-foundation: var(--color-navy-950);
+  --color-technology: var(--color-cyan-500);
+  --color-evidence: var(--color-orange-500);
+  --color-research: var(--color-purple-500);
+  --color-verified: var(--color-green-500);
+  --color-critical: var(--color-red-500);
+  --color-neutral: var(--color-gray-500);
+}
+
+/* =========================================================
+   THEMES
+   ========================================================= */
+
+[data-theme="paper"] {
+  --page-bg: var(--paper-bg);
+  --page-text: var(--paper-text);
+  --page-muted: var(--paper-muted);
+  --page-surface: var(--paper-surface);
+  --page-border: var(--paper-border);
+  --page-link: var(--paper-link);
+}
+
+[data-theme="dark"] {
+  --page-bg:
+    radial-gradient(circle at top right, #24143f 0, transparent 35%),
+    radial-gradient(circle at bottom left, #2b160c 0, transparent 32%),
+    var(--dark-bg);
+
+  --page-text: var(--dark-text);
+  --page-muted: var(--dark-muted);
+  --page-surface: var(--dark-surface);
+  --page-border: var(--dark-border);
+  --page-link: var(--dark-purple);
+}
+
+/* =========================================================
+   ACCENTS
+   ========================================================= */
+
+[data-accent="brand"] {
+  --accent: var(--dark-cyan);
+  --accent-secondary: var(--dark-purple);
+  --accent-action: var(--dark-cyan);
+  --eyebrow-color: var(--dark-cyan);
+}
+
+[data-accent="legal"] {
+  --accent: var(--paper-orange);
+  --accent-secondary: var(--paper-orange-dark);
+  --accent-action: var(--paper-link);
+  --eyebrow-color: var(--paper-link);
+
+  /* Legal family: Impressum / Legal / Privacy */
+  --badge-border: var(--paper-orange);
+  --badge-text: var(--paper-orange-dark);
+
+  --notice-border: var(--paper-orange);
+  --notice-text: var(--paper-orange-text);
+
+  --notice-warning-border: var(--paper-orange);
+  --notice-warning-text: var(--paper-orange-text);
+}
+
+[data-accent="research"] {
+  --accent: var(--paper-purple);
+  --accent-secondary: var(--paper-link);
+  --accent-action: var(--paper-purple);
+  --eyebrow-color: var(--paper-purple);
+
+  /* Research family */
+  --badge-border: var(--paper-purple);
+  --badge-text: var(--paper-purple);
+
+  --notice-border: var(--paper-purple);
+  --notice-text: var(--paper-muted);
+
+  --notice-warning-border: var(--paper-purple);
+  --notice-warning-text: var(--paper-muted);
+}
+
+[data-accent="avin"] {
+  --accent: var(--dark-purple);
+  --accent-secondary: var(--dark-orange);
+  --accent-action: var(--dark-purple);
+  --eyebrow-color: var(--dark-orange);
+}
+
+[data-accent="evidence"] {
+  --accent: var(--dark-orange);
+  --accent-secondary: var(--dark-purple);
+  --accent-action: var(--dark-orange);
+  --eyebrow-color: var(--dark-orange);
+}
+
+[data-accent="lab"] {
+  --accent: var(--dark-purple);
+  --accent-secondary: var(--dark-orange);
+  --accent-action: var(--dark-purple);
+  --eyebrow-color: var(--dark-orange);
+}

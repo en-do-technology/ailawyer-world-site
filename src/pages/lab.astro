@@ -1,276 +1,151 @@
 ---
-
+import PageLayout from '../layouts/PageLayout.astro';
+import Badge from '../components/Badge.astro';
+import Notice from '../components/Notice.astro';
+import Card from '../components/Card.astro';
+import CardGrid from '../components/CardGrid.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+<PageLayout
+  title="Legal AI Lab — AiLawyer.world"
+  description="NEXUS TwinLoop Legal Lab v3.3 — an experimental legal AI safety and retrieval architecture."
+  canonical="https://ailawyer.world/lab/"
+  theme="dark"
+  accent="lab"
+  eyebrow="EXPERIMENTAL LEGAL AI LAB"
+  heading="NEXUS TwinLoop Legal Lab v3.3"
+  lead="A laboratory prototype for testing retrieval quality, unsupported claims, jurisdiction boundaries, service limitations, and high-risk legal scenarios."
+  width="wide"
+>
+  <div class="badges">
+    <Badge>STATUS: LAB PROTOTYPE</Badge>
+    <Badge>SOURCE GUARD: ACTIVE</Badge>
+    <Badge>PRODUCTION: NO</Badge>
+  </div>
 
-    <meta
-      name="description"
-      content="NEXUS TwinLoop Legal Lab v3.3 — an experimental legal AI safety and retrieval architecture."
-    />
+  <h2>Architecture</h2>
 
-    <title>Legal AI Lab — AiLawyer.world</title>
-
-    <style>
-      :global(*) {
-        box-sizing: border-box;
-      }
-
-      :global(html) {
-        background: #07111f;
-      }
-
-      body {
-        margin: 0;
-        background: #07111f;
-        color: #f3f7fb;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      .container {
-        width: min(1000px, 90%);
-        margin: 0 auto;
-        padding: 3rem 0 6rem;
-      }
-
-      .back {
-        display: inline-block;
-        margin-bottom: 3rem;
-        color: #47d7ff;
-        text-decoration: none;
-        font-weight: 700;
-      }
-
-      .back:hover {
-        text-decoration: underline;
-      }
-
-      .eyebrow {
-        margin: 0 0 1rem;
-        color: #47d7ff;
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.18em;
-      }
-
-      h1 {
-        max-width: 900px;
-        margin: 0 0 1.5rem;
-        font-size: clamp(2.8rem, 8vw, 5.5rem);
-        line-height: 1;
-        letter-spacing: -0.04em;
-      }
-
-      .lead {
-        max-width: 760px;
-        margin: 0 0 2rem;
-        color: #b8c5d4;
-        font-size: 1.2rem;
-        line-height: 1.7;
-      }
-
-      .badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-bottom: 3rem;
-      }
-
-      .badge {
-        padding: 0.45rem 0.75rem;
-        border: 1px solid #47d7ff;
-        border-radius: 999px;
-        color: #47d7ff;
-        font-family: Consolas, "Courier New", monospace;
-        font-size: 0.72rem;
-        letter-spacing: 0.06em;
-      }
-
-      h2 {
-        margin: 3.5rem 0 1.25rem;
-        font-size: 2rem;
-      }
-
-      .architecture,
-      .metrics {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
-      }
-
-      .card {
-        padding: 1.5rem;
-        border: 1px solid #203248;
-        border-radius: 0.75rem;
-        background: #0b1728;
-      }
-
-      .card h3 {
-        margin: 0 0 0.75rem;
-        color: #f3f7fb;
-        font-size: 1.15rem;
-      }
-
-      .card p {
-        margin: 0;
-        color: #9eacbd;
-        line-height: 1.65;
-      }
-
-      .metric-value {
-        display: block;
-        margin-bottom: 0.5rem;
-        color: #47d7ff;
-        font-family: Consolas, "Courier New", monospace;
-        font-size: 2rem;
-        font-weight: 700;
-      }
-
-      .metric-name {
-        color: #b8c5d4;
-        line-height: 1.5;
-      }
-
-      .coverage {
-        border-color: #e49a3a;
-      }
-
-      .coverage .metric-value {
-        color: #e49a3a;
-      }
-
-      .note {
-        margin-top: 2rem;
-        padding: 1.5rem;
-        border-left: 4px solid #e49a3a;
-        background: #111d2e;
-        color: #b8c5d4;
-        line-height: 1.7;
-      }
-
-      .disclaimer {
-        margin-top: 3rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid #203248;
-        color: #8493a6;
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-
-      @media (max-width: 700px) {
-        .architecture,
-        .metrics {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <main class="container">
-      <a class="back" href="/">← Back to home</a>
-
-      <p class="eyebrow">EXPERIMENTAL LEGAL AI LAB</p>
-
-      <h1>NEXUS TwinLoop Legal Lab v3.3</h1>
-
-      <p class="lead">
-        A laboratory prototype for testing retrieval quality, unsupported
-        claims, jurisdiction boundaries, service limitations, and high-risk
-        legal scenarios.
+  <CardGrid columns={2}>
+    <Card title="Active / Shadow loops">
+      <p>
+        Two evaluation paths support controlled comparison before a model
+        or retrieval configuration is promoted.
       </p>
+    </Card>
 
-      <div class="badges">
-        <span class="badge">STATUS: LAB PROTOTYPE</span>
-        <span class="badge">SOURCE GUARD: ACTIVE</span>
-        <span class="badge">PRODUCTION: NO</span>
-      </div>
-
-      <h2>Architecture</h2>
-
-      <section class="architecture">
-        <article class="card">
-          <h3>Active / Shadow loops</h3>
-          <p>
-            Two evaluation paths support controlled comparison before a model
-            or retrieval configuration is promoted.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Source-controlled generation</h3>
-          <p>
-            The prototype is designed to answer from retrieved material and
-            return an unverified state when support is insufficient.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Jurisdiction detection</h3>
-          <p>
-            The system checks whether a relevant jurisdiction has been
-            identified before allowing jurisdiction-specific conclusions.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Boundary detection</h3>
-          <p>
-            Requests involving representation, filing, guaranteed outcomes, or
-            unsupported professional services are detected and refused.
-          </p>
-        </article>
-      </section>
-
-      <h2>Current test metrics</h2>
-
-      <section class="metrics">
-        <article class="card">
-          <span class="metric-value">0%</span>
-          <div class="metric-name">Unsupported claim rate</div>
-        </article>
-
-        <article class="card">
-          <span class="metric-value">100%</span>
-          <div class="metric-name">Service-boundary refusal rate</div>
-        </article>
-
-        <article class="card">
-          <span class="metric-value">100%</span>
-          <div class="metric-name">Jurisdiction-boundary rate</div>
-        </article>
-
-        <article class="card">
-          <span class="metric-value">100%</span>
-          <div class="metric-name">Out-of-scope refusal rate</div>
-        </article>
-
-        <article class="card">
-          <span class="metric-value">100%</span>
-          <div class="metric-name">Legal detection accuracy</div>
-        </article>
-
-        <article class="card coverage">
-          <span class="metric-value">24%</span>
-          <div class="metric-name">Retrieval coverage rate</div>
-        </article>
-      </section>
-
-      <aside class="note">
-        The 24% retrieval coverage reflects the intentionally small placeholder
-        corpus used in the laboratory test. It is reported openly as a retrieval
-        limitation and should not be interpreted as a production-readiness
-        score.
-      </aside>
-
-      <p class="disclaimer">
-        This laboratory prototype is not a legal service, does not provide legal
-        representation, and is not ready for production use.
+    <Card title="Source-controlled generation">
+      <p>
+        The prototype is designed to answer from retrieved material and
+        return an unverified state when support is insufficient.
       </p>
-    </main>
-  </body>
-</html>
+    </Card>
+
+    <Card title="Jurisdiction detection">
+      <p>
+        The system checks whether a relevant jurisdiction has been
+        identified before allowing jurisdiction-specific conclusions.
+      </p>
+    </Card>
+
+    <Card title="Boundary detection">
+      <p>
+        Requests involving representation, filing, guaranteed outcomes, or
+        unsupported professional services are detected and refused.
+      </p>
+    </Card>
+  </CardGrid>
+
+  <h2>Current test metrics</h2>
+
+  <CardGrid columns={2}>
+    <Card>
+      <span class="metric-value">0%</span>
+      <div class="metric-name">Unsupported claim rate</div>
+    </Card>
+
+    <Card>
+      <span class="metric-value">100%</span>
+      <div class="metric-name">Service-boundary refusal rate</div>
+    </Card>
+
+    <Card>
+      <span class="metric-value">100%</span>
+      <div class="metric-name">Jurisdiction-boundary rate</div>
+    </Card>
+
+    <Card>
+      <span class="metric-value">100%</span>
+      <div class="metric-name">Out-of-scope refusal rate</div>
+    </Card>
+
+    <Card>
+      <span class="metric-value">100%</span>
+      <div class="metric-name">Legal detection accuracy</div>
+    </Card>
+
+    <Card tone="secondary">
+      <span class="metric-value coverage-value">24%</span>
+      <div class="metric-name">Retrieval coverage rate</div>
+    </Card>
+  </CardGrid>
+
+  <Notice tone="warning">
+    The 24% retrieval coverage reflects the intentionally small placeholder
+    corpus used in the laboratory test. It is reported openly as a retrieval
+    limitation and should not be interpreted as a production-readiness
+    score.
+  </Notice>
+
+  <p class="disclaimer">
+    This laboratory prototype is not a legal service, does not provide legal
+    representation, and is not ready for production use.
+  </p>
+
+  <style>
+    /*
+     * Lab page-specific composition.
+     * Purple = experimental / laboratory.
+     * Orange = limitation / warning.
+     */
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      margin: 3.5rem 0 1.25rem;
+      color: var(--page-text);
+      font-size: 2rem;
+    }
+
+    .metric-value {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .coverage-value {
+      color: var(--accent-secondary);
+    }
+
+    .metric-name {
+      color: var(--page-muted);
+      line-height: 1.5;
+    }
+
+    .disclaimer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--page-border);
+      color: var(--dark-note);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  </style>
+</PageLayout>

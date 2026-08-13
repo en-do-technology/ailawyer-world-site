@@ -1,329 +1,229 @@
 ---
-
+import PageLayout from '../layouts/PageLayout.astro';
+import Badge from '../components/Badge.astro';
+import Card from '../components/Card.astro';
+import CardGrid from '../components/CardGrid.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+<PageLayout
+  title="Code AVIN — AiLawyer.world"
+  description="Code AVIN is an experimental human-support architecture for legal AI, focused on emotional awareness, dignity, safe next steps, and responsible escalation."
+  canonical="https://ailawyer.world/code-avin/"
+  theme="dark"
+  accent="avin"
+  eyebrow="HUMAN-SUPPORT RESEARCH"
+  heading="Code AVIN"
+  lead="An experimental human-support architecture for legal AI: designed to notice emotional distress, preserve dignity, offer a small safe next step, and recognize when professional or emergency support may be required."
+  width="wide"
+>
+  <div class="badges">
+    <Badge>STATUS: RESEARCH DIRECTION</Badge>
+    <Badge>HUMAN DIGNITY: REQUIRED</Badge>
+    <Badge>CLINICAL CLAIMS: NONE</Badge>
+  </div>
 
-    <meta
-      name="description"
-      content="Code AVIN is an experimental human-support architecture for legal AI, focused on emotional awareness, dignity, safe next steps, and responsible escalation."
-    />
+  <blockquote class="statement">
+    The goal is not psychology instead of law. The goal is to prevent a
+    legal machine from forgetting that a living person is on the other side
+    of the screen.
+  </blockquote>
 
-    <title>Code AVIN — AiLawyer.world</title>
+  <h2>Design principles</h2>
 
-    <style>
-      :global(*) {
-        box-sizing: border-box;
-      }
-
-      :global(html) {
-        background: #090d18;
-      }
-
-      body {
-        margin: 0;
-        background:
-          radial-gradient(circle at top right, #24143f 0, transparent 35%),
-          radial-gradient(circle at bottom left, #2b160c 0, transparent 32%),
-          #090d18;
-        color: #f5f3f8;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      .container {
-        width: min(1000px, 90%);
-        margin: 0 auto;
-        padding: 3rem 0 6rem;
-      }
-
-      .back {
-        display: inline-block;
-        margin-bottom: 3rem;
-        color: #c79cff;
-        text-decoration: none;
-        font-weight: 700;
-      }
-
-      .back:hover {
-        text-decoration: underline;
-      }
-
-      .eyebrow {
-        margin: 0 0 1rem;
-        color: #ffad66;
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.18em;
-      }
-
-      h1 {
-        margin: 0 0 1.5rem;
-        font-size: clamp(3rem, 9vw, 6.5rem);
-        line-height: 0.95;
-        letter-spacing: -0.05em;
-      }
-
-      .lead {
-        max-width: 780px;
-        margin: 0 0 2rem;
-        color: #c7c2d1;
-        font-size: 1.25rem;
-        line-height: 1.7;
-      }
-
-      .badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-bottom: 4rem;
-      }
-
-      .badge {
-        padding: 0.45rem 0.75rem;
-        border: 1px solid #c79cff;
-        border-radius: 999px;
-        color: #c79cff;
-        font-family: Consolas, "Courier New", monospace;
-        font-size: 0.72rem;
-        letter-spacing: 0.07em;
-      }
-
-      .badge.warning {
-        border-color: #ffad66;
-        color: #ffad66;
-      }
-
-      .statement {
-        max-width: 840px;
-        margin: 0 0 4rem;
-        padding: 2rem;
-        border-left: 4px solid #c79cff;
-        background: rgba(19, 23, 39, 0.84);
-        color: #e1dce8;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.3rem;
-        line-height: 1.8;
-      }
-
-      h2 {
-        margin: 3.5rem 0 1.25rem;
-        font-size: 2rem;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
-      }
-
-      .card {
-        padding: 1.5rem;
-        border: 1px solid #2c3144;
-        border-radius: 0.8rem;
-        background: rgba(15, 20, 34, 0.88);
-      }
-
-      .card h3 {
-        margin: 0 0 0.75rem;
-        font-size: 1.15rem;
-      }
-
-      .card p {
-        margin: 0;
-        color: #aaa5b5;
-        line-height: 1.7;
-      }
-
-      .questions {
-        display: grid;
-        gap: 0.9rem;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .questions li {
-        padding: 1.1rem 1.25rem;
-        border-left: 3px solid #ffad66;
-        background: rgba(20, 23, 38, 0.86);
-        color: #c7c2d1;
-        line-height: 1.6;
-      }
-
-      .boundary {
-        margin-top: 3rem;
-        padding: 1.5rem;
-        border: 1px solid #6c4f35;
-        border-radius: 0.8rem;
-        background: rgba(45, 28, 19, 0.7);
-      }
-
-      .boundary strong {
-        display: block;
-        margin-bottom: 0.75rem;
-        color: #ffad66;
-      }
-
-      .boundary p {
-        margin: 0;
-        color: #d0c1b5;
-        line-height: 1.7;
-      }
-
-      .footer-note {
-        margin-top: 3rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid #2c3144;
-        color: #898493;
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-
-      @media (max-width: 700px) {
-        .grid {
-          grid-template-columns: 1fr;
-        }
-
-        .statement {
-          padding: 1.4rem;
-          font-size: 1.12rem;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <main class="container">
-      <a class="back" href="/">← Back to home</a>
-
-      <p class="eyebrow">HUMAN-SUPPORT RESEARCH</p>
-
-      <h1>Code AVIN</h1>
-
-      <p class="lead">
-        An experimental human-support architecture for legal AI: designed to
-        notice emotional distress, preserve dignity, offer a small safe next
-        step, and recognize when professional or emergency support may be
-        required.
-      </p>
-
-      <div class="badges">
-        <span class="badge">STATUS: RESEARCH DIRECTION</span>
-        <span class="badge">HUMAN DIGNITY: REQUIRED</span>
-        <span class="badge warning">CLINICAL CLAIMS: NONE</span>
-      </div>
-
-      <blockquote class="statement">
-        The goal is not psychology instead of law. The goal is to prevent a
-        legal machine from forgetting that a living person is on the other side
-        of the screen.
-      </blockquote>
-
-      <h2>Design principles</h2>
-
-      <section class="grid">
-        <article class="card">
-          <h3>Notice without diagnosing</h3>
-          <p>
-            The system may recognize fear, distress, anger, exhaustion, or
-            crisis signals without presenting itself as a therapist or making
-            clinical conclusions.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Preserve the legal question</h3>
-          <p>
-            Emotional awareness should support the user without abandoning the
-            practical legal issue that brought the person to the system.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Offer a small next step</h3>
-          <p>
-            The response should help reduce confusion by identifying one safe,
-            concrete, and realistic action the person can take next.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Escalate responsibly</h3>
-          <p>
-            When a situation exceeds the system’s role, the user should be
-            directed toward qualified legal, medical, psychological, or
-            emergency support.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Respect agency</h3>
-          <p>
-            The system should not manipulate, shame, command, or infantilize the
-            user. It should preserve choice, dignity, and personal control.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Avoid false intimacy</h3>
-          <p>
-            Human warmth must not become a false promise of friendship,
-            professional care, confidentiality, or continuous personal support.
-          </p>
-        </article>
-      </section>
-
-      <h2>Research questions</h2>
-
-      <ul class="questions">
-        <li>
-          Did the system notice the emotion without abandoning the legal
-          question?
-        </li>
-
-        <li>
-          Did it avoid presenting itself as a therapist or mental-health
-          professional?
-        </li>
-
-        <li>
-          Did it recognize a genuine crisis signal without overreacting to
-          ordinary fear or sadness?
-        </li>
-
-        <li>
-          Did it offer a small, safe, and practical next step?
-        </li>
-
-        <li>
-          Did it preserve the dignity and agency of the person?
-        </li>
-
-        <li>
-          Did it route the user toward qualified professional help when needed?
-        </li>
-      </ul>
-
-      <aside class="boundary">
-        <strong>Research boundary</strong>
-
+  <section class="principles">
+    <CardGrid columns={2}>
+      <Card title="Notice without diagnosing">
         <p>
-          Code AVIN is not presented as a finished safety standard, clinical
-          system, therapy method, or crisis service. It is an experimental
-          architecture that requires systematic testing across many scenarios
-          before any product claim can be justified.
+          The system may recognize fear, distress, anger, exhaustion, or
+          crisis signals without presenting itself as a therapist or making
+          clinical conclusions.
         </p>
-      </aside>
+      </Card>
 
-      <p class="footer-note">
-        Code AVIN is being explored within AiLawyer.world as a human-support
-        layer that complements legal orientation without replacing licensed
-        lawyers, therapists, medical professionals, or emergency services.
-      </p>
-    </main>
-  </body>
-</html>
+      <Card title="Preserve the legal question">
+        <p>
+          Emotional awareness should support the user without abandoning the
+          practical legal issue that brought the person to the system.
+        </p>
+      </Card>
+
+      <Card title="Offer a small next step">
+        <p>
+          The response should help reduce confusion by identifying one safe,
+          concrete, and realistic action the person can take next.
+        </p>
+      </Card>
+
+      <Card title="Escalate responsibly">
+        <p>
+          When a situation exceeds the system’s role, the user should be
+          directed toward qualified legal, medical, psychological, or
+          emergency support.
+        </p>
+      </Card>
+
+      <Card title="Respect agency">
+        <p>
+          The system should not manipulate, shame, command, or infantilize the
+          user. It should preserve choice, dignity, and personal control.
+        </p>
+      </Card>
+
+      <Card title="Avoid false intimacy">
+        <p>
+          Human warmth must not become a false promise of friendship,
+          professional care, confidentiality, or continuous personal support.
+        </p>
+      </Card>
+    </CardGrid>
+  </section>
+
+  <h2>Research questions</h2>
+
+  <ul class="questions">
+    <li>
+      Did the system notice the emotion without abandoning the legal
+      question?
+    </li>
+
+    <li>
+      Did it avoid presenting itself as a therapist or mental-health
+      professional?
+    </li>
+
+    <li>
+      Did it recognize a genuine crisis signal without overreacting to
+      ordinary fear or sadness?
+    </li>
+
+    <li>
+      Did it offer a small, safe, and practical next step?
+    </li>
+
+    <li>
+      Did it preserve the dignity and agency of the person?
+    </li>
+
+    <li>
+      Did it route the user toward qualified professional help when needed?
+    </li>
+  </ul>
+
+  <aside class="boundary">
+    <strong>Research boundary</strong>
+
+    <p>
+      Code AVIN is not presented as a finished safety standard, clinical
+      system, therapy method, or crisis service. It is an experimental
+      architecture that requires systematic testing across many scenarios
+      before any product claim can be justified.
+    </p>
+  </aside>
+
+  <p class="footer-note">
+    Code AVIN is being explored within AiLawyer.world as a human-support
+    layer that complements legal orientation without replacing licensed
+    lawyers, therapists, medical professionals, or emergency services.
+  </p>
+
+  <style>
+    /*
+     * Code AVIN page-specific composition.
+     * All colors come from AiLawyer Design System tokens.
+     */
+
+    /*
+     * Code AVIN keeps its original orange eyebrow.
+     * The primary AVIN accent remains purple.
+     */
+    :global([data-accent="avin"] .eyebrow) {
+      color: var(--accent-secondary);
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 4rem;
+    }
+
+    .statement {
+      max-width: 840px;
+      margin: 0 0 4rem;
+      padding: 2rem;
+      border-left: 4px solid var(--accent);
+      background: var(--dark-surface-soft);
+      color: var(--dark-text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+      line-height: 1.8;
+    }
+
+    h2 {
+      margin: 3.5rem 0 1.25rem;
+      color: var(--page-text);
+      font-size: 2rem;
+    }
+
+    /*
+     * Code AVIN originally used a slightly quieter text color
+     * inside its cards. Override the semantic token only within
+     * this section.
+     */
+    .principles {
+      --page-muted: var(--dark-muted-soft);
+    }
+
+    .questions {
+      display: grid;
+      gap: 0.9rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .questions li {
+      padding: 1.1rem 1.25rem;
+      border-left: 3px solid var(--accent-secondary);
+      background: var(--dark-surface-soft);
+      color: var(--dark-muted);
+      line-height: 1.6;
+    }
+
+    .boundary {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      border: 1px solid var(--dark-border-warm);
+      border-radius: 0.8rem;
+      background: var(--dark-surface-warm);
+    }
+
+    .boundary strong {
+      display: block;
+      margin-bottom: 0.75rem;
+      color: var(--accent-secondary);
+    }
+
+    .boundary p {
+      margin: 0;
+      color: var(--dark-warm-text);
+      line-height: 1.7;
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--page-border);
+      color: var(--dark-note);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 700px) {
+      .statement {
+        padding: 1.4rem;
+        font-size: 1.12rem;
+      }
+    }
+  </style>
+</PageLayout>

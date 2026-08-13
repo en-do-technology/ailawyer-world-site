@@ -1,0 +1,84 @@
+---
+interface Props {
+  title?: string;
+  tone?: 'default' | 'secondary' | 'neutral';
+  headingLevel?: 'h2' | 'h3';
+}
+
+const {
+  title,
+  tone = 'default',
+  headingLevel = 'h3',
+} = Astro.props;
+
+const Heading = headingLevel;
+const hasMeta = Astro.slots.has('meta');
+---
+
+<article class="card" data-tone={tone}>
+  {
+    hasMeta && (
+      <div class="card-meta">
+        <slot name="meta" />
+      </div>
+    )
+  }
+
+  {
+    title && (
+      <Heading>{title}</Heading>
+    )
+  }
+
+  <div class="card-content">
+    <slot />
+  </div>
+</article>
+
+<style>
+  .card {
+    padding: 1.5rem;
+    border: 1px solid var(--page-border);
+    border-radius: 0.8rem;
+    background: var(--page-surface);
+  }
+
+  .card[data-tone="secondary"] {
+    border-color: var(--accent-secondary);
+  }
+
+  .card[data-tone="neutral"] {
+    border-color: var(--status-neutral);
+  }
+
+  .card-meta {
+    margin-bottom: 1rem;
+  }
+
+  h2,
+  h3 {
+    margin: 0 0 0.75rem;
+    color: var(--page-text);
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  .card-content {
+    color: var(--page-muted);
+    line-height: 1.7;
+  }
+
+  .card-content :global(p) {
+    margin: 0;
+  }
+
+  .card-content :global(p + p) {
+    margin-top: 1rem;
+  }
+</style>

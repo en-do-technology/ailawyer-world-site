@@ -1,0 +1,194 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Badge from '../components/Badge.astro';
+import Notice from '../components/Notice.astro';
+---
+
+<PageLayout
+  title="Privacy — AiLawyer.world"
+  description="Privacy information for AiLawyer.world, including hosting and privacy-first web analytics."
+  canonical="https://ailawyer.world/privacy/"
+  theme="paper"
+  accent="legal"
+  eyebrow="PRIVACY INFORMATION"
+  heading="Privacy"
+  lead="AiLawyer.world is designed to collect as little visitor information as reasonably possible."
+  width="article"
+>
+  <div slot="pre-heading" class="status-row">
+    <Badge>PRIVACY-FIRST MEASUREMENT</Badge>
+  </div>
+
+  <div class="privacy-notice">
+    <Notice tone="warning">
+      This website does not currently provide user accounts, contact forms,
+      payments, advertising, or behavioural profiling.
+    </Notice>
+  </div>
+
+  <section>
+    <h2>Website hosting</h2>
+
+    <p>
+      This website is delivered through Firebase Hosting, a Google service.
+      Technical connection data may be processed as necessary to deliver,
+      protect, and maintain the website.
+    </p>
+  </section>
+
+  <section>
+    <h2>Cloudflare Web Analytics</h2>
+
+    <p>
+      This website uses Cloudflare Web Analytics, a privacy-first
+      measurement service, to understand general website usage and page
+      performance.
+    </p>
+
+    <p>
+      Cloudflare states that Web Analytics does not collect or use visitors’
+      personal data. It does not use cookies or local storage, does not
+      fingerprint individual visitors, and does not track visitors across
+      unrelated websites.
+    </p>
+
+    <p>
+      The analytics beacon measures aggregated information such as page
+      views, visits, referral sources, browser and device categories,
+      approximate geographic statistics, and page-performance metrics.
+    </p>
+  </section>
+
+  <section>
+    <h2>No advertising profiles</h2>
+
+    <p>
+      AiLawyer.world does not use analytics information to create individual
+      advertising profiles, identify particular visitors, or sell visitor
+      information to advertisers.
+    </p>
+  </section>
+
+  <section>
+    <h2>Data controller and legal basis</h2>
+
+    <p>
+      The data controller for the processing described on this page is the
+      website operator identified in the{' '}
+      <a href="/impressum/">Impressum</a>.
+    </p>
+
+    <p>
+      Where personal data is processed, the legal basis is Article 6(1)(f)
+      GDPR. Our legitimate interests are the secure and reliable delivery of
+      this website, protection against misuse, and privacy-respecting
+      measurement of aggregated website usage.
+    </p>
+  </section>
+
+  <section>
+    <h2>Retention and international processing</h2>
+
+    <p>
+      Technical data is retained only for as long as reasonably necessary to
+      deliver and protect the website, produce aggregated statistics, meet
+      legal obligations, and resolve security or operational incidents.
+    </p>
+
+    <p>
+      Google and Cloudflare may process data outside the European Economic
+      Area. Where required by applicable law, international transfers are
+      protected by an adequacy decision, standard contractual clauses, or
+      another recognised transfer mechanism.
+    </p>
+  </section>
+
+  <section>
+    <h2>Your data protection rights</h2>
+
+    <p>
+      Where the GDPR applies, you may have rights to access, correct, erase,
+      or restrict the processing of your personal data, to receive portable
+      data where applicable, and to object to processing based on legitimate
+      interests.
+    </p>
+
+    <p>
+      You may also lodge a complaint with a competent data protection
+      supervisory authority. To exercise your rights, contact the website
+      operator using the details in the{' '}
+      <a href="/impressum/">Impressum</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>External links</h2>
+
+    <p>
+      This website may contain links to external services, including GitHub.
+      When an external link is opened, the privacy practices of that service
+      apply.
+    </p>
+  </section>
+
+  <section>
+    <h2>Your questions</h2>
+
+    <p>
+      Privacy-related questions may be directed to the website operator using
+      the contact information provided in the{' '}
+      <a href="/impressum/">Impressum</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Changes to this page</h2>
+
+    <p>
+      This privacy information may be updated when the website, its
+      infrastructure, or its measurement tools change.
+    </p>
+  </section>
+
+  <style>
+    /*
+     * Privacy belongs to the
+     * Paper / Legal family.
+     * All colors come from Design System tokens.
+     */
+
+    .status-row {
+      margin-bottom: 1.5rem;
+    }
+
+    .privacy-notice {
+      --accent-secondary: var(--paper-orange);
+      --page-muted: var(--paper-orange-text);
+      margin-bottom: 2.5rem;
+    }
+
+    section {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--page-border);
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      color: var(--page-text);
+      font-size: 1.6rem;
+    }
+
+    p {
+      line-height: 1.75;
+    }
+
+    p + p {
+      margin-top: 1rem;
+    }
+
+    a {
+      color: var(--page-link);
+    }
+  </style>
+</PageLayout>

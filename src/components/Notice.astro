@@ -1,0 +1,41 @@
+---
+interface Props {
+  tone?: 'default' | 'secondary' | 'warning' | 'critical' | 'neutral';
+}
+
+const { tone = 'default' } = Astro.props;
+---
+
+<aside class="notice" data-tone={tone}>
+  <slot />
+</aside>
+
+<style>
+  .notice {
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    border-left: 4px solid var(--notice-border);
+    background: var(--page-surface);
+    color: var(--notice-text);
+    line-height: 1.7;
+  }
+
+  .notice[data-tone="secondary"] {
+    border-left-color: var(--accent-secondary);
+  }
+
+  .notice[data-tone="warning"] {
+    border-left-color: var(--notice-warning-border);
+    color: var(--notice-warning-text);
+  }
+
+  .notice[data-tone="critical"] {
+    border-left-color: var(--status-critical);
+    color: var(--notice-text);
+  }
+
+  .notice[data-tone="neutral"] {
+    border-left-color: var(--status-neutral);
+    color: var(--notice-text);
+  }
+</style>

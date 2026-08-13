@@ -1,180 +1,13 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-
-    <meta
-      name="description"
-      content="AiLawyer.world is a legal AI research project focused on verified sources, jurisdiction awareness, clear boundaries, and honest uncertainty."
-    />
-
-    <title>AiLawyer.world — Legal AI Research</title>
-
-    <style>
-      :global(*) {
-        box-sizing: border-box;
-      }
-
-      :global(html) {
-        background: #07111f;
-      }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background: #07111f;
-        color: #f3f7fb;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      main {
-        width: min(900px, 90%);
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 0 auto;
-        padding: 4rem 0;
-      }
-
-      .eyebrow {
-        margin: 0;
-        color: #47d7ff;
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.18em;
-      }
-
-      .status {
-        align-self: flex-start;
-        margin: 1rem 0 1.5rem;
-        padding: 0.45rem 0.75rem;
-        border: 1px solid #47d7ff;
-        border-radius: 999px;
-        color: #47d7ff;
-        font-family: Consolas, "Courier New", monospace;
-        font-size: 0.75rem;
-        letter-spacing: 0.08em;
-      }
-
-      h1 {
-        margin: 0.3rem 0 1rem;
-        font-size: clamp(3rem, 9vw, 6.5rem);
-        line-height: 0.95;
-        letter-spacing: -0.04em;
-      }
-
-      .intro {
-        max-width: 680px;
-        margin: 0;
-        color: #b8c5d4;
-        font-size: 1.25rem;
-        line-height: 1.6;
-      }
-
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-
-      .actions a {
-        display: inline-block;
-        padding: 0.85rem 1.2rem;
-        border: 1px solid #47d7ff;
-        border-radius: 0.5rem;
-        color: #f3f7fb;
-        text-decoration: none;
-        font-weight: 700;
-        transition:
-          background 160ms ease,
-          color 160ms ease,
-          transform 160ms ease;
-      }
-
-      .actions a:hover,
-      .actions a:focus-visible {
-        background: #47d7ff;
-        color: #07111f;
-        transform: translateY(-2px);
-      }
-
-      .actions a:focus-visible {
-        outline: 2px solid #f3f7fb;
-        outline-offset: 3px;
-      }
-
-      footer {
-        width: min(900px, 90%);
-        margin: 0 auto;
-        padding: 1.5rem 0 2rem;
-        border-top: 1px solid #203248;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-        color: #8493a6;
-        font-size: 0.9rem;
-      }
-
-      footer p {
-        margin: 0;
-      }
-
-      .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.25rem;
-      }
-
-      .footer-links a {
-        color: #b8c5d4;
-        text-decoration: none;
-      }
-
-      .footer-links a:hover,
-      .footer-links a:focus-visible {
-        color: #47d7ff;
-        text-decoration: underline;
-      }
-
-      @media (max-width: 600px) {
-        main {
-          padding: 3rem 0;
-        }
-
-        .intro {
-          font-size: 1.05rem;
-        }
-
-        .actions {
-          flex-direction: column;
-        }
-
-        .actions a {
-          width: 100%;
-          text-align: center;
-        }
-
-        footer {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
+<BaseLayout
+  title="AiLawyer.world — Legal AI Research"
+  description="AiLawyer.world is a legal AI research project focused on verified sources, jurisdiction awareness, clear boundaries, and honest uncertainty."
+  canonical="https://ailawyer.world/"
+>
+  <div class="site-shell">
     <main>
       <p class="eyebrow">LEGAL AI RESEARCH</p>
 
@@ -188,10 +21,15 @@
       </p>
 
       <div class="actions">
-        <a href="/evidence/">View Evidence</a>
-        <a href="/research/boundaries-not-promises/">Read Research</a>
-        <a href="/lab/">Open Lab</a>
-        <a href="/code-avin/">Code AVIN</a>
+        <a class="evidence" href="/evidence/">View Evidence</a>
+
+        <a class="research" href="/research/boundaries-not-promises/">
+          Read Research
+        </a>
+
+        <a class="technology" href="/lab/">Open Lab</a>
+
+        <a class="research" href="/code-avin/">Code AVIN</a>
       </div>
     </main>
 
@@ -199,17 +37,178 @@
       <p>AiLawyer.world · EN-DO Technology</p>
 
       <nav class="footer-links" aria-label="Website links">
-  <a
-    href="https://github.com/en-do-technology/ailawyer-world-site"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    GitHub
-  </a>
+        <a
+          href="https://github.com/en-do-technology/ailawyer-world-site"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
 
-  <a href="/legal/">Legal</a>
-  <a href="/impressum/">Impressum</a>
-</nav>
+        <a href="/legal/">Legal</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/impressum/">Impressum</a>
+      </nav>
     </footer>
-  </body>
-</html>
+  </div>
+
+  <style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    background: var(--color-navy-950);
+  }
+
+  :global(body) {
+    margin: 0;
+    background: var(--color-navy-950);
+    color: var(--color-text-light);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .site-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    width: min(900px, 90%);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 4rem 0;
+  }
+
+  .eyebrow {
+    margin: 0;
+    color: var(--color-cyan-500);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+
+  .status {
+    align-self: flex-start;
+    margin: 1rem 0 1.5rem;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid var(--color-cyan-500);
+    border-radius: 999px;
+    color: var(--color-cyan-500);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+
+  h1 {
+    margin: 0.3rem 0 1rem;
+    font-size: clamp(3rem, 9vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+  }
+
+  .intro {
+    max-width: 680px;
+    margin: 0;
+    color: var(--color-text-muted-light);
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .actions a {
+    display: inline-block;
+    padding: 0.85rem 1.2rem;
+    border: 1px solid var(--color-cyan-500);
+    border-radius: 0.5rem;
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: 700;
+    transition:
+      background 160ms ease,
+      color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .actions a:hover,
+  .actions a:focus-visible {
+    background: var(--color-cyan-500);
+    color: var(--color-navy-950);
+    transform: translateY(-2px);
+  }
+
+  .actions a:focus-visible {
+    outline: 2px solid var(--color-text-light);
+    outline-offset: 3px;
+  }
+
+  footer {
+    width: min(900px, 90%);
+    margin: 0 auto;
+    padding: 1.5rem 0 2rem;
+    border-top: 1px solid var(--dark-border-navy);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-gray-500);
+    font-size: 0.9rem;
+  }
+
+  footer p {
+    margin: 0;
+    color: var(--color-gray-500);
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .footer-links a {
+    color: var(--color-text-muted-light);
+    text-decoration: none;
+  }
+
+  .footer-links a:hover,
+  .footer-links a:focus-visible {
+    color: var(--color-cyan-500);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    main {
+      padding: 3rem 0;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+    }
+
+    .actions {
+      flex-direction: column;
+    }
+
+    .actions a {
+      width: 100%;
+      text-align: center;
+    }
+
+    footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+</BaseLayout>
