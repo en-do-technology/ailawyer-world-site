@@ -578,5 +578,22 @@ import Notice from '../../components/Notice.astro';
         font-size: 1.12rem;
       }
     }
+        @media (max-width: 640px) {
+      /* Metric identifiers in the results table */
+      table code {
+        font-size: 1rem;
+        line-height: 1.45;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+
+      /* Technical pipeline: user question → ... */
+      pre.flow {
+        font-size: 1.05rem;
+        line-height: 1.65;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+    }
   </style>
 </PageLayout>
