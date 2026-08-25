@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import Badge from '../../../components/Badge.astro';
+import Card from '../../../components/Card.astro';
+---
+
+<PageLayout
+  title="E-001 — Google Play Package Verification — AiLawyer.world"
+  description="Evidence record for Android package identity verification."
+  canonical="https://ailawyer.world/evidence/google-play/E-001-package-verification/"
+  theme="dark"
+  accent="evidence"
+  eyebrow="EVIDENCE ARCHIVE"
+  heading="E-001 — Google Play Package Verification"
+  lead="A public evidence record for Android package identity verification."
+  width="article"
+>
+  <Card title="Evidence record" headingLevel="h2">
+    <Badge slot="meta" tone="verified">SOURCE: GOOGLE PLAY CONSOLE</Badge>
+
+    <p><strong>Evidence ID:</strong> E-001</p>
+    <p><strong>Source:</strong> Google Play Console</p>
+    <p><strong>Evidence scope:</strong> package identity, developer verification, signing fingerprint</p>
+    <p><strong>Limitation:</strong> This evidence does not prove global priority or original creation date.</p>
+    <p><a href="/evidence/google-play/E-001-package-verification.pdf" target="_blank" rel="noopener noreferrer">View original PDF</a></p>
+  </Card>
+</PageLayout>

@@ -56,6 +56,41 @@ import CardGrid from '../components/CardGrid.astro';
     </Card>
   </CardGrid>
 
+  <section aria-labelledby="evidence-archive-heading">
+    <h2 id="evidence-archive-heading">Evidence Archive</h2>
+    <p>Original source records and evidence artifacts are provided for independent review.</p>
+
+    <CardGrid columns={1}>
+      <Card title="E-001 — Google Play Package Verification" headingLevel="h3">
+        <Badge slot="meta" tone="verified">SOURCE: GOOGLE PLAY CONSOLE</Badge>
+
+        <p><strong>Source:</strong> Google Play Console</p>
+        <p><strong>Scope:</strong> package identity, developer verification, signing fingerprint</p>
+        <p><a href="/evidence/google-play/E-001-package-verification/">View evidence record</a></p>
+        <p><a href="/evidence/google-play/E-001-package-verification.pdf" target="_blank" rel="noopener noreferrer">View original PDF</a></p>
+      </Card>
+
+      <Card title="E-002 — Google Play Production Release History" headingLevel="h3">
+        <Badge slot="meta" tone="verified">SOURCE: GOOGLE PLAY CONSOLE</Badge>
+
+        <p><strong>Source:</strong> Google Play Console</p>
+        <p><strong>Scope:</strong> visible production release history</p>
+        <p><strong>Date shown by source:</strong> June 9, 2021</p>
+        <p><a href="/evidence/google-play/E-002-production-release-history/">View evidence record</a></p>
+        <p><a href="/evidence/google-play/E-002-production-release-history.pdf" target="_blank" rel="noopener noreferrer">View original PDF</a></p>
+      </Card>
+
+      <Card title="E-003 — Google Play Release Details" headingLevel="h3">
+        <Badge slot="meta" tone="verified">SOURCE: GOOGLE PLAY CONSOLE</Badge>
+
+        <p><strong>Source:</strong> Google Play Console</p>
+        <p><strong>Scope:</strong> release details, App Bundle metadata, availability</p>
+        <p><a href="/evidence/google-play/E-003-release-details/">View evidence record</a></p>
+        <p><a href="/evidence/google-play/E-003-release-details.pdf" target="_blank" rel="noopener noreferrer">View original PDF</a></p>
+      </Card>
+    </CardGrid>
+  </section>
+
   <p class="evidence-note">
     Evidence should be supported by documents, platform records, archived
     pages, screenshots, or other independently reviewable materials.
