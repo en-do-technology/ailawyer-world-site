@@ -1,0 +1,44 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Badge from '../../components/Badge.astro';
+import Card from '../../components/Card.astro';
+---
+
+<PageLayout
+  title="Evidence Archive Charter — AiLawyer.world"
+  description="The Evidence Archive Charter for source classes, dates, integrity, and claim limits."
+  canonical="https://ailawyer.world/evidence/charter/"
+  theme="dark"
+  accent="evidence"
+  eyebrow="EVIDENCE ARCHIVE"
+  heading="Evidence Archive Charter"
+  lead="Rules for organizing, checking, and limiting claims based on evidence records."
+  width="article"
+>
+  <Card title="Purpose" headingLevel="h2">
+    <Badge slot="meta">ARCHIVE POLICY</Badge>
+    <p>The Evidence Archive organizes publicly reviewable records related to AiLawyer.world research history, software releases, and technical provenance.</p>
+  </Card>
+
+  <Card title="Evidence classes" headingLevel="h2">
+    <p><strong>First-party:</strong> a record produced by the platform, service, or organization directly responsible for the relevant system or account.</p>
+    <p><strong>Third-party:</strong> a record produced by an independent external source.</p>
+    <p><strong>Archival:</strong> a preserved historical copy or record whose value depends on its capture and preservation context.</p>
+  </Card>
+
+  <Card title="As-of dates" headingLevel="h2">
+    <p>Evidence capture dates identify when an artifact was obtained or recorded. Dates shown by the source are kept separate from the evidence capture date.</p>
+  </Card>
+
+  <Card title="Hash policy" headingLevel="h2">
+    <p>Published artifact records may include a SHA-256 hash of the corresponding file. The hash supports later byte-level integrity checks; it does not prove the truth of every claim in the artifact.</p>
+  </Card>
+
+  <Card title="Excluded evidence policy" headingLevel="h2">
+    <p>Artifacts that cannot be identified, inspected, or linked to a stated source and scope are excluded from the archive until their provenance and limitations can be documented.</p>
+  </Card>
+
+  <Card title="Claim limitations" headingLevel="h2">
+    <p>Archive records describe what a source directly shows. Claims must not exceed the source's scope, date, or reliability. Absence of a record is not proof that an event did not occur.</p>
+  </Card>
+</PageLayout>
