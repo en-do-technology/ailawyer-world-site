@@ -222,6 +222,11 @@
   --accent-secondary: var(--dark-purple);
   --accent-action: var(--dark-orange);
   --eyebrow-color: var(--dark-orange);
+  --page-link: #d8b8ff;
+}
+
+[data-theme="dark"][data-accent="evidence"] a {
+  color: var(--page-link);
 }
 
 [data-accent="lab"] {

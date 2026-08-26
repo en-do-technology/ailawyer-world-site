@@ -37,6 +37,7 @@ const hasMeta = Astro.slots.has('meta');
 
 <style>
   .card {
+    min-width: 0;
     padding: 1.5rem;
     border: 1px solid var(--page-border);
     border-radius: 0.8rem;
@@ -70,8 +71,14 @@ const hasMeta = Astro.slots.has('meta');
   }
 
   .card-content {
+    min-width: 0;
     color: var(--page-muted);
     line-height: 1.7;
+  }
+
+  .card-content :global(code) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .card-content :global(p) {
