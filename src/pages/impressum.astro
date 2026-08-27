@@ -1,7 +1,5 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import Badge from '../components/Badge.astro';
-import Notice from '../components/Notice.astro';
 ---
 
 <PageLayout
@@ -15,44 +13,30 @@ import Notice from '../components/Notice.astro';
   lead="Provider identification and contact information for AiLawyer.world."
   width="article"
 >
-  <div slot="pre-heading" class="status-row">
-    <Badge>STATUS: DRAFT</Badge>
-  </div>
-
-  <div class="legal-warning">
-    <Notice tone="warning">
-      This page is currently a development placeholder. The required provider
-      information must be completed and legally reviewed before public launch.
-    </Notice>
-  </div>
-
   <section>
-    <h2>Provider</h2>
+    <h2>Anbieter gemäß § 5 DDG</h2>
 
     <address>
-      <span class="placeholder">[FULL LEGAL NAME]</span><br />
-      EN-DO Technology<br />
-      <span class="placeholder">[STREET AND HOUSE NUMBER]</span><br />
-      <span class="placeholder">[POSTAL CODE AND CITY]</span><br />
-      Germany
+      Anton Vibe<br />
+      handelnd unter der Bezeichnung EN-DO Technology<br />
+      <br />
+      Kölpiner Str. 3<br />
+      12689 Berlin<br />
+      Deutschland<br />
+      <br />
+      E-Mail: <a href="mailto:sarverein@gmail.com">sarverein@gmail.com</a>
     </address>
   </section>
 
   <section>
-    <h2>Contact</h2>
-
-    <p>
-      Email:
-      <span class="placeholder">[CONTACT EMAIL]</span>
-    </p>
-  </section>
-
-  <section>
-    <h2>Responsible for content</h2>
+    <h2>
+      Verantwortlich für journalistisch-redaktionelle Inhalte<br />
+      gemäß § 18 Abs. 2 MStV:
+    </h2>
 
     <address>
-      <span class="placeholder">[RESPONSIBLE PERSON]</span><br />
-      <span class="placeholder">[ADDRESS, IF REQUIRED]</span>
+      Anton Vibe<br />
+      Anschrift wie oben
     </address>
   </section>
 
@@ -72,20 +56,6 @@ import Notice from '../components/Notice.astro';
      * Paper / Legal family.
      * No raw colors are stored in this page.
      */
-
-    .status-row {
-      margin-bottom: 1.5rem;
-    }
-
-    /*
-     * Preserve the warmer warning character
-     * of the original Impressum design.
-     */
-    .legal-warning {
-      --accent-secondary: var(--paper-orange);
-      --page-muted: var(--paper-orange-text);
-      margin-bottom: 2.5rem;
-    }
 
     section {
       margin-top: 2rem;
@@ -107,12 +77,6 @@ import Notice from '../components/Notice.astro';
     address {
       font-style: normal;
       line-height: 1.75;
-    }
-
-    .placeholder {
-      color: var(--accent-secondary);
-      font-family: Consolas, "Courier New", monospace;
-      font-weight: 700;
     }
 
     a {
