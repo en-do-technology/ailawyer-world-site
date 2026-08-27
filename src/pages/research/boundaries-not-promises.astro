@@ -14,6 +14,8 @@ import Notice from '../../components/Notice.astro';
   eyebrow="RESEARCH"
   heading="Why Legal AI Should Start With Boundaries, Not Promises"
   lead="A laboratory research note on source-grounded answers, jurisdiction limits, service boundaries, safer update discipline, REG-containers, and a human-support layer under evaluation."
+  socialImage="https://ailawyer.world/images/research/ailawyer-world-boundaries-not-promises-legal-ai.png"
+  socialImageAlt="AiLawyer.world illustration of legal AI as a balance between verified legal sources and artificial intelligence."
   width="article"
 >
   <div class="publication-meta">
@@ -38,13 +40,13 @@ import Notice from '../../components/Notice.astro';
   <article>
     <figure class="article-illustration">
       <img
-        src="/images/research/boundaries-not-promises-legal-ai.png"
-        alt="Illustration of legal AI as a balance between verified legal sources and artificial intelligence."
+        src="/images/research/ailawyer-world-boundaries-not-promises-legal-ai.png"
+        alt="AiLawyer.world illustration of legal AI as a balance between verified legal sources and artificial intelligence."
         loading="eager"
         decoding="async"
       />
       <figcaption>
-        Legal AI requires a balance between artificial intelligence, verified legal sources, and controlled boundaries.
+        AiLawyer.world: legal AI requires a balance between artificial intelligence, verified legal sources, and controlled boundaries.
       </figcaption>
     </figure>
 
@@ -380,6 +382,22 @@ import Notice from '../../components/Notice.astro';
         <a href="https://ailawyer.world/">AiLawyer.world</a> — canonical project and research site.
       </li>
     </ol>
+
+    <div class="share-panel" aria-labelledby="share-bottom-heading">
+      <h2 id="share-bottom-heading">Share this research</h2>
+      <div class="share-links">
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Failawyer.world%2Fresearch%2Fboundaries-not-promises%2F" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/intent/tweet?text=Why%20Legal%20AI%20Should%20Start%20With%20Boundaries%2C%20Not%20Promises&url=https%3A%2F%2Failawyer.world%2Fresearch%2Fboundaries-not-promises%2F" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://www.reddit.com/submit?url=https%3A%2F%2Failawyer.world%2Fresearch%2Fboundaries-not-promises%2F&title=Why%20Legal%20AI%20Should%20Start%20With%20Boundaries%2C%20Not%20Promises" target="_blank" rel="noopener noreferrer">Reddit</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Failawyer.world%2Fresearch%2Fboundaries-not-promises%2F" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://t.me/share/url?url=https%3A%2F%2Failawyer.world%2Fresearch%2Fboundaries-not-promises%2F&text=Why%20Legal%20AI%20Should%20Start%20With%20Boundaries%2C%20Not%20Promises" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://api.whatsapp.com/send?text=Why%20Legal%20AI%20Should%20Start%20With%20Boundaries%2C%20Not%20Promises%20https%3A%2F%2Failawyer.world%2Fresearch%2Fboundaries-not-promises%2F" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://substack.com/notes" target="_blank" rel="noopener noreferrer" data-share-substack>Substack</a>
+        <button type="button" data-share-copy>Copy link</button>
+        <button type="button" data-share-native hidden>Share</button>
+      </div>
+      <p class="share-feedback" role="status" aria-live="polite"></p>
+    </div>
   </article>
 
   <div class="research-notice">
@@ -487,6 +505,60 @@ import Notice from '../../components/Notice.astro';
       font-weight: 700;
     }
 
+    .share-panel {
+      margin: 2.5rem 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--page-border);
+      background: var(--page-surface);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .share-panel h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .share-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem 0.75rem;
+      align-items: center;
+    }
+
+    .share-links a,
+    .share-links button {
+      padding: 0.35rem 0.5rem;
+      border: 1px solid var(--page-border);
+      background: transparent;
+      color: var(--page-link);
+      font: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+    }
+
+    .share-links a:hover,
+    .share-links a:focus-visible,
+    .share-links button:hover,
+    .share-links button:focus-visible {
+      background: var(--page-bg);
+    }
+
+    .share-links a:focus-visible,
+    .share-links button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .share-feedback {
+      min-height: 1.5em;
+      margin: 0.75rem 0 0;
+      color: var(--page-muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+    }
+
     blockquote {
       margin: 2.2rem 0;
       padding: 1rem 0 1rem 1.35rem;
@@ -590,6 +662,10 @@ import Notice from '../../components/Notice.astro';
       margin-bottom: 1rem;
     }
 
+    .references a {
+      overflow-wrap: anywhere;
+    }
+
     .research-notice {
       margin-top: 3rem;
     }
@@ -639,4 +715,55 @@ import Notice from '../../components/Notice.astro';
       }
     }
   </style>
+
+  <script>
+    const canonicalUrl = 'https://ailawyer.world/research/boundaries-not-promises/';
+    const shareTitle = 'Why Legal AI Should Start With Boundaries, Not Promises';
+
+    const copyLink = async () => {
+      await navigator.clipboard.writeText(canonicalUrl);
+    };
+
+    document.querySelectorAll('[data-share-copy]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const panel = button.closest('.share-panel');
+        const feedback = panel?.querySelector('.share-feedback');
+        try {
+          await copyLink();
+          if (feedback) feedback.textContent = 'Link copied';
+        } catch {
+          if (feedback) feedback.textContent = 'Copy unavailable — copy the article URL manually.';
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-share-substack]').forEach((link) => {
+      link.addEventListener('click', async (event) => {
+        event.preventDefault();
+        window.open(link.href, '_blank', 'noopener,noreferrer');
+        const panel = link.closest('.share-panel');
+        const feedback = panel?.querySelector('.share-feedback');
+        try {
+          await copyLink();
+          if (feedback) feedback.textContent = 'Link copied — paste it into a Substack Note.';
+        } catch {
+          if (feedback) feedback.textContent = 'Copy unavailable — paste the article URL into a Substack Note.';
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-share-native]').forEach((button) => {
+      if (typeof navigator.share !== 'function') return;
+      button.hidden = false;
+      button.addEventListener('click', async () => {
+        const panel = button.closest('.share-panel');
+        const feedback = panel?.querySelector('.share-feedback');
+        try {
+          await navigator.share({ title: shareTitle, url: canonicalUrl });
+        } catch (error) {
+          if (error?.name !== 'AbortError' && feedback) feedback.textContent = 'Sharing unavailable.';
+        }
+      });
+    });
+  </script>
 </PageLayout>

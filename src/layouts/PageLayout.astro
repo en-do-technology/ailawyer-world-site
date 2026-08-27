@@ -13,6 +13,8 @@ interface Props {
   eyebrow?: string;
   heading: string;
   lead?: string;
+  socialImage?: string;
+  socialImageAlt?: string;
 
   width?: 'article' | 'standard' | 'wide';
   showBack?: boolean;
@@ -28,6 +30,8 @@ const {
   eyebrow,
   heading,
   lead,
+  socialImage,
+  socialImageAlt,
   width = 'standard',
   showBack = true,
 } = Astro.props;
@@ -38,6 +42,8 @@ const {
   description={description}
   canonical={canonical}
   ogType={ogType}
+  socialImage={socialImage}
+  socialImageAlt={socialImageAlt}
 >
   <div
     class="page-shell"

@@ -8,6 +8,8 @@ interface Props {
   canonical?: string;
   noindex?: boolean;
   ogType?: 'website' | 'article';
+  socialImage?: string;
+  socialImageAlt?: string;
 }
 
 const {
@@ -16,6 +18,8 @@ const {
   canonical,
   noindex = false,
   ogType = 'website',
+  socialImage,
+  socialImageAlt,
 } = Astro.props;
 ---
 
@@ -36,6 +40,11 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content={ogType} />
     {canonical && <meta property="og:url" content={canonical} />}
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    {socialImageAlt && <meta property="og:image:alt" content={socialImageAlt} />}
+    {socialImage && <meta name="twitter:card" content="summary_large_image" />}
+    {socialImage && <meta name="twitter:image" content={socialImage} />}
+    {socialImageAlt && <meta name="twitter:image:alt" content={socialImageAlt} />}
 
     <title>{title}</title>
   </head>
