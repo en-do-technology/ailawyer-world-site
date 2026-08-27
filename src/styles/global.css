@@ -229,6 +229,16 @@
   color: var(--page-link);
 }
 
+[data-accent="evidence"] .package-link {
+  color: var(--page-link);
+  font-size: 1em;
+  font-weight: 600;
+}
+
+[data-accent="evidence"] .package-link code {
+  font-size: 1rem !important;
+}
+
 [data-accent="lab"] {
   --accent: var(--dark-purple);
   --accent-secondary: var(--dark-orange);
