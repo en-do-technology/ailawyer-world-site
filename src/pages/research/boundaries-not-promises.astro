@@ -36,6 +36,18 @@ import Notice from '../../components/Notice.astro';
   </Notice>
 
   <article>
+    <figure class="article-illustration">
+      <img
+        src="/images/research/boundaries-not-promises-legal-ai.png"
+        alt="Illustration of legal AI as a balance between verified legal sources and artificial intelligence."
+        loading="eager"
+        decoding="async"
+      />
+      <figcaption>
+        Legal AI requires a balance between artificial intelligence, verified legal sources, and controlled boundaries.
+      </figcaption>
+    </figure>
+
     <p>
       Large language models are getting better at answering legal questions. That is exactly why legal AI should not begin with a promise to answer everything.
     </p>
@@ -342,19 +354,27 @@ import Notice from '../../components/Notice.astro';
     <ol class="references">
       <li id="ref-1">
         Federal Trade Commission. “FTC Finalizes Order with DoNotPay That Prohibits Deceptive AI Lawyer Claims, Imposes Monetary Relief, and Requires Notice to Past Subscribers.” February 11, 2025.
-        <a href="https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires">FTC source</a>.
+        <a href="https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires" target="_blank" rel="noopener noreferrer">FTC source</a>.
       </li>
       <li>
         AiLawyer.world. Evidence page — project chronology and Google Play Console evidence for <code>com.ailawyer</code>.
-        <a href="/evidence/">AiLawyer.world / Evidence</a>.
+        <a href="https://ailawyer.world/evidence/">AiLawyer.world / Evidence</a>.
+      </li>
+      <li>
+        EN-DO Technology. NEXUS TwinLoop Legal Lab v3.3 — laboratory repository for the reference implementation described in this article.
+        <a href="https://github.com/en-do-technology/nexus-twinloop-legal-lab" target="_blank" rel="noopener noreferrer">GitHub repository</a>.
       </li>
       <li>
         EN-DO Technology. NEXUS TwinLoop Legal Lab v3.3 — reference snapshot used for this article, commit <code>5531a1e1eda4e47cedc4312d413f6e916713ef1a</code>.
-        <a href="https://github.com/en-do-technology/nexus-twinloop-legal-lab/commit/5531a1e1eda4e47cedc4312d413f6e916713ef1a">Immutable GitHub snapshot</a>.
+        <a href="https://github.com/en-do-technology/nexus-twinloop-legal-lab/commit/5531a1e1eda4e47cedc4312d413f6e916713ef1a" target="_blank" rel="noopener noreferrer">Immutable GitHub snapshot</a>.
       </li>
       <li>
         EN-DO Technology. REG Container Schema — proposed schema document for the next structured legal knowledge layer.
-        <a href="https://github.com/en-do-technology/nexus-twinloop-legal-lab/blob/main/REG_CONTAINER_SCHEMA.md">REG_CONTAINER_SCHEMA.md</a>.
+        <a href="https://github.com/en-do-technology/nexus-twinloop-legal-lab/blob/main/REG_CONTAINER_SCHEMA.md" target="_blank" rel="noopener noreferrer">REG_CONTAINER_SCHEMA.md</a>.
+      </li>
+      <li>
+        Medium. “Why Legal AI Should Start With Boundaries, Not Promises” — published version of this research article.
+        <a href="https://medium.com/where-thought-bends/why-legal-ai-should-start-with-boundaries-not-promises-c5f011aa3074" target="_blank" rel="noopener noreferrer">Read on Medium</a>.
       </li>
       <li>
         <a href="https://ailawyer.world/">AiLawyer.world</a> — canonical project and research site.
@@ -419,6 +439,29 @@ import Notice from '../../components/Notice.astro';
 
     article p {
       margin: 0 0 1.45rem;
+    }
+
+    .article-illustration {
+      margin: 0 0 2.5rem;
+      text-align: center;
+    }
+
+    .article-illustration img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      border: 1px solid var(--page-border);
+      border-radius: 0.55rem;
+    }
+
+    .article-illustration figcaption {
+      margin-top: 0.75rem;
+      color: var(--page-muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
 
     article a {
