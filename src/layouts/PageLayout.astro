@@ -15,6 +15,7 @@ interface Props {
   lead?: string;
   socialImage?: string;
   socialImageAlt?: string;
+  publishedTime?: string;
 
   width?: 'article' | 'standard' | 'wide';
   showBack?: boolean;
@@ -32,6 +33,7 @@ const {
   lead,
   socialImage,
   socialImageAlt,
+  publishedTime,
   width = 'standard',
   showBack = true,
 } = Astro.props;
@@ -44,6 +46,7 @@ const {
   ogType={ogType}
   socialImage={socialImage}
   socialImageAlt={socialImageAlt}
+  publishedTime={publishedTime}
 >
   <div
     class="page-shell"
