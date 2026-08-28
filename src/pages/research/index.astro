@@ -1,0 +1,32 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Badge from '../../components/Badge.astro';
+import Card from '../../components/Card.astro';
+import CardGrid from '../../components/CardGrid.astro';
+---
+
+<PageLayout
+  title="Research | AiLawyer.world"
+  description="Research publications from AiLawyer.world on evidence-first legal AI, explicit boundaries, provenance, verification, and human oversight."
+  canonical="https://ailawyer.world/research/"
+  theme="paper"
+  accent="research"
+  eyebrow="RESEARCH PUBLICATIONS"
+  heading="Research"
+  lead="Evidence-first research on how legal AI can remain verifiable, bounded, and accountable."
+  width="standard"
+>
+  <CardGrid columns={2}>
+    <Card title="Why Legal AI Should Start With Boundaries, Not Promises" headingLevel="h2">
+      <Badge slot="meta" tone="secondary">RESEARCH NOTE</Badge>
+      <p> A laboratory research note on source-grounded answers, jurisdiction limits, service boundaries, and honest uncertainty.</p>
+      <p><a href="/research/boundaries-not-promises/">Read the research article →</a></p>
+    </Card>
+
+    <Card title="Legal AI in 2026: From Promises to Verifiable Systems" headingLevel="h2">
+      <Badge slot="meta" tone="secondary">RESEARCH ARTICLE</Badge>
+      <p>An analysis of governed legal knowledge, provenance, verification, explicit boundaries, and human oversight in Legal AI.</p>
+      <p><a href="/research/legal-ai-2026-verifiable-systems/">Read the research article →</a></p>
+    </Card>
+  </CardGrid>
+</PageLayout>
